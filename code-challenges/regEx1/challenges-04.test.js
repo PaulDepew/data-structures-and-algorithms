@@ -14,7 +14,7 @@ For example:
 
 const isNum = (input) => {
   // Solution code here...
-  return /\d/.test(input);
+  return (/\d/.test(input));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -40,10 +40,10 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 const citiesAtoJ = (arr) => {
   // Solution code here...
   let array = [];
-  arr.forEach((name) => {
-    name.match(/\b[A-J].*?\b/g && /\b\s\b/g);
-    if (name.match(/\b[A-J].*?\b/g)) {
-      array.push(name.toString());
+  arr.forEach((city) => {
+    city.replace(' ', '');
+    if (city.match(/\b[J-Z]+[a-z]*\b/g)) {
+      array.push(city);
     }
   }); return array;
 };
@@ -62,6 +62,7 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
   // Solution code here...
+  return /\bO?o?(ct)(ober)?\b/g.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,6 +77,7 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 
 const noPunctuation = str => {
   // Solution code here...
+  return str.match(/\b\w*\s/g);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -92,6 +94,7 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 
 let hangman = (str) => {
   // Solution code here...
+  return str.replace(/[aeiou]/gi, '_');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -108,6 +111,7 @@ const seashells = 'She sells seashells by the seashore. The shells she sells are
 
 const findShells = (str) => {
   // Solution code here...
+  return str.match(/\w*ells/g);
 };
 
 /* ------------------------------------------------------------------------------------------------
