@@ -5,17 +5,20 @@
 // I can make this work with any built in method.... :'(
 
 function insertShiftArray(array, value) {
-  // let newArray = [...array];
-  let middle = Math.ceil(array.length/2);
-
-  for (let i = 0; i <= array.length; i++) {
-    if (i === middle) {
-      [...array, value];
+  let mid = Math.floor(array.length/2);
+  let arr = array;
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++){
+    if (i < mid) {
+      newArr[i] = arr[i];
+    } else if ( i === mid ) {
+      newArr[i] = value;
+      newArr[i + 1] = arr[i];
+    } else if (i > mid) {
+      newArr[i + 1] = arr[i];
     }
   }
-  console.log(array);
-  // array[array.length/2] = value;
-  return array;
+  return newArr;
 }
 
 
