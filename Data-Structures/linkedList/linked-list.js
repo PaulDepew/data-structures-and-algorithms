@@ -45,17 +45,18 @@ class LinkedList {
   include(value){
     let current = this.head;
     // console.log(current);
+    let valid = false;
 
     while (current){
-      let valid = false;
       if (current.value === value) {
         valid =true;
+        break;
       } else {
         current = current.next;
         // this.traverse();
       }
-      return valid;
     }
+    return valid;
   }
 }
 
