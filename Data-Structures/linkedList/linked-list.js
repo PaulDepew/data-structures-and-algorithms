@@ -109,6 +109,31 @@ class LinkedList {
     }
     return this;
   }
+
+  counter() {
+    let current = this.head;
+    let i = 0;
+    while(current) {
+      i++;
+      current = current.next;
+    }
+    return i;
+  }
+
+  searchNode(nth) {
+    let current = this.head;
+    let k = this.counter() - (nth);
+    let j = 0 + k -1;
+    let i = 0;
+
+    while (current) {
+      if (i === j || j === -1) {
+        console.log('this is value ', current.value);
+      }
+      i++;
+      current = current.next;
+    }
+  }
 }
 
 
