@@ -134,6 +134,30 @@ class LinkedList {
       current = current.next;
     }
   }
+
+  mergeLists(list1, list2){
+    let current = this.head;
+    let zip1 = [];
+    let zip2 = [];
+    let zipped = [];
+    list1.forEach( value => {
+      zip1.push(value);
+    });
+    list2.forEach(value => {
+      zip2.push(value);
+    });
+
+    zip1.forEach( (value, idx) => {
+      zipped.push(value);
+      zipped.push(zip2[idx]);
+    });
+
+    while (current){
+      zipped.forEach( value => {
+        this.insert(value);
+      });
+    }
+  }
 }
 
 
