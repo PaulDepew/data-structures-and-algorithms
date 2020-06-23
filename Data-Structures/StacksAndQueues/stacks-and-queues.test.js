@@ -104,7 +104,6 @@ describe( 'To test if we can peek our queue', () => {
     let testQueue = new Stack.Queue();
     testQueue.enqueue('second test');
     testQueue.enqueue('test');
-    console.log(testQueue.peek());
     expect(testQueue.front.value).toBe( 'second test' );
   });
 });
@@ -115,7 +114,57 @@ describe( 'To test if we can isEmpty our queue', () => {
     let testQueue = new Stack.Queue();
     testQueue.enqueue('second test');
     testQueue.enqueue('test');
-    console.log(testQueue.isEmpty());
     expect(testQueue.isEmpty()).toBe( true );
+  });
+});
+
+describe( 'To test our enqueue(value) method', () => {
+  it('Should return the correct output', ()=> {
+
+    let testQueue = new Stack.PseudoQueue();
+    testQueue.enqueue('20');
+    testQueue.enqueue('15');
+    testQueue.enqueue('10');
+    testQueue.enqueue('5');
+    expect(testQueue.rear.value).toBe('5');
+  });
+});
+
+describe( 'To test our enqueue(value) method on an empty PsuedoQueue', () => {
+  it('Should return the correct output', ()=> {
+
+    let testQueue = new Stack.PseudoQueue();
+
+    testQueue.enqueue('5');
+    console.log(testQueue);
+    expect(testQueue.front.value).toBe('5');
+  });
+});
+
+describe( 'To test our dequeue(value) method', () => {
+  it('Should return the correct output', ()=> {
+
+    let testQueue = new Stack.PseudoQueue();
+    testQueue.enqueue('20');
+    testQueue.enqueue('15');
+    testQueue.enqueue('10');
+    testQueue.enqueue('5');
+    testQueue.dequeue();
+    console.log(testQueue);
+    expect(testQueue.front.value).toBe('15');
+  });
+});
+
+describe( 'To test our dequeue(value) method', () => {
+  it('Should return the correct output', ()=> {
+
+    let testQueue = new Stack.PseudoQueue();
+
+    testQueue.enqueue('15');
+    testQueue.enqueue('10');
+    testQueue.enqueue('5');
+    testQueue.dequeue();
+    console.log(testQueue);
+    expect(testQueue.front.value).toBe('10');
   });
 });

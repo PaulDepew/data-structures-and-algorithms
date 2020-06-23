@@ -70,7 +70,7 @@ class Queue {
       this.rear = null;
       return;
     } else {
-      this.counter =- 0;
+      this.counter =- 1;
       let tempFront = this.front;
       this.front = this.front.next;
       this.rear = tempFront.next;
@@ -87,8 +87,46 @@ class Queue {
   }
 }
 
+class PseudoQueue {
+  constructor(value){
+    this.front = null;
+    this.counter = 0;
+  }
+
+  enqueue(value) {
+    let newNode = new Node(value);
+    
+    if (this.front === null){
+      this.front = newNode;
+      this.rear = newNode;
+      this.counter =+ 1;
+    } else {
+      this.rear.next = newNode;
+      this.rear = newNode;
+      this.counter =+ 1;
+    }
+  }
+
+  dequeue(){
+
+    if (this.front === null){
+      this.counter = 0;
+      this.rear = null;
+      return;
+    } else {
+      this.counter =- 1;
+      let tempFront = this.front;
+      this.front = this.front.next;
+      this.rear = tempFront.next;
+      tempFront.next = null;
+      return tempFront;
+    }
+  }
+}
+
 module.exports = {
 
   Stack: Stack,
   Queue: Queue,
+  PseudoQueue: PseudoQueue,
 };
