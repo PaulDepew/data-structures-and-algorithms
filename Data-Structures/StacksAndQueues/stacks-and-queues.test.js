@@ -136,7 +136,6 @@ describe( 'To test our enqueue(value) method on an empty PsuedoQueue', () => {
     let testQueue = new Stack.PseudoQueue();
 
     testQueue.enqueue('5');
-    console.log(testQueue);
     expect(testQueue.front.value).toBe('5');
   });
 });
@@ -150,7 +149,6 @@ describe( 'To test our dequeue(value) method', () => {
     testQueue.enqueue('10');
     testQueue.enqueue('5');
     testQueue.dequeue();
-    console.log(testQueue);
     expect(testQueue.front.value).toBe('15');
   });
 });
@@ -164,7 +162,34 @@ describe( 'To test our dequeue(value) method', () => {
     testQueue.enqueue('10');
     testQueue.enqueue('5');
     testQueue.dequeue();
-    console.log(testQueue);
+    // console.log(testQueue);
     expect(testQueue.front.value).toBe('10');
+  });
+});
+
+describe( 'We can enqueue animals to our AnimalShelter', () => {
+  it('Should return the correct output', ()=> {
+
+    let testQueue = new Stack.AnimalShelter();
+
+    testQueue.enqueue('dog');
+    testQueue.enqueue('cat');
+    testQueue.enqueue('dog');
+    
+    expect(testQueue.front.value).toBe('dog');
+  });
+});
+
+describe( 'We can dequeue animals out of our AnimalShelter', () => {
+  it('Should return null because it is not a cat or dog', ()=> {
+
+    let testQueue = new Stack.AnimalShelter();
+
+    testQueue.enqueue('dog');
+    testQueue.enqueue('bird');
+    testQueue.enqueue('cat');
+    testQueue.dequeue();
+
+    expect(testQueue.dequeue()).toBe(null);
   });
 });
