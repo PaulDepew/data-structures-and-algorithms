@@ -168,9 +168,22 @@ class AnimalShelter{
   }
 }
 
+function MultiBracketValidation(string){
+  let check = string.replace(/\[\]|\{\}|\(\)/g, '');
+  console.log(`Check :: ${check} ` + ` String :: ${string}`);
+  
+  if(check === string){
+    return false;
+  } else {
+    return true;
+  }
+}
+
+
 module.exports = {
   AnimalShelter: AnimalShelter,
   Stack: Stack,
   Queue: Queue,
   PseudoQueue: PseudoQueue,
+  MultiBracketValidation: MultiBracketValidation,
 };
