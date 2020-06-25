@@ -193,3 +193,33 @@ describe( 'We can dequeue animals out of our AnimalShelter', () => {
     expect(testQueue.dequeue()).toBe(null);
   });
 });
+
+describe( 'We test brackets in strings', () => {
+  it('Should return false due to mismatched brackets', ()=> {
+
+    let testString = '{(})';
+
+  
+    expect(Stack.MultiBracketValidation(testString)).toBe(false);
+  });
+});
+
+describe( 'We test brackets in strings', () => {
+  it('Should return true due to matched brackets', ()=> {
+
+    let testString = '{}()';
+
+    // console.log(Stack.MultiBracketValidation(testString));
+    expect(Stack.MultiBracketValidation(testString)).toBe(true);
+  });
+});
+
+describe( 'We test brackets in strings', () => {
+  it('Should return false due to mismatched brackets', ()=> {
+
+    let testString = '{(AB}CD)';
+
+ 
+    expect(Stack.MultiBracketValidation(testString)).toBe(false);
+  });
+});
