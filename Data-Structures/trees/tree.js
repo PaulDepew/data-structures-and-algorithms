@@ -32,7 +32,7 @@ class Tree {
       this.inOrder(root.left);
     }
     console.log(root.value);
-    
+
     if (root.right !== null){
       this.inOrder(root.right);
     }
@@ -98,12 +98,35 @@ class Tree {
     return present;
 
   }
+
+  getMaximum(root, max){
+    try{
+
+      if (root.value > max){
+        max = root.value;
+      }
+      if(root.left > max){
+
+        max = this.getMaximum(root.left, max);
+      }
+
+      if(max < root.right){
+        max = this.getMaximum(root.right, max);
+      }
+
+      return max;
+    } catch(e){
+      console.log('error');
+    }
+  }
 }
+
 
 
 
 module.exports = {
   Node: Node,
   Tree: Tree,
-}
+};
+
 

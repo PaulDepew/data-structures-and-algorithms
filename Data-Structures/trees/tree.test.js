@@ -65,3 +65,16 @@ describe('This is a test see see if we postOrder Traverse', () => {
     expect(console.log).toBeCalled();
   });
 });
+
+describe('This is a test see see if we postOrder Traverse', () => {
+  it('return a postOrder Traversal', ()=> {
+    let newTree = new tree.Tree();
+    newTree.root = new tree.Node(1);
+    newTree.root.left = new tree.Node(2);
+    newTree.root.right = new tree.Node(3);
+    let biggest = newTree.getMaximum(newTree.root, 0);
+    console.log(newTree.getMaximum(newTree.root, 0));
+    expect(biggest).toBe(3);
+  });
+});
+
