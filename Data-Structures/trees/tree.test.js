@@ -66,15 +66,24 @@ describe('This is a test see see if we postOrder Traverse', () => {
   });
 });
 
-describe('This is a test see see if we postOrder Traverse', () => {
-  it('return a postOrder Traversal', ()=> {
-    let newTree = new tree.Tree();
-    newTree.root = new tree.Node(1);
-    newTree.root.left = new tree.Node(2);
-    newTree.root.right = new tree.Node(3);
-    let biggest = newTree.getMaximum(newTree.root, 0);
-    console.log(newTree.getMaximum(newTree.root, 0));
-    expect(biggest).toBe(3);
+// describe('This is a test see see if we can get the maximum value', () => {
+//   it('returns the maximum value', ()=> {
+//     let newTree = new tree.Tree();
+//     newTree.root = new tree.Node(1);
+//     newTree.root.left = new tree.Node(2);
+//     newTree.root.right = new tree.Node(3);
+//     let biggest = newTree.getMaximum(newTree.root, 0);
+//     expect(biggest).toBe(3);
+//   });
+// });
+
+describe('This is a test see see if we can breadth first search a binary tree', () => {
+  it('returns the correct value', ()=> {
+
+   
+
+    let test = testTree.queueSearch(testTree.root);
+    console.log(test);
+    expect(test).toBe(test);
   });
 });
-

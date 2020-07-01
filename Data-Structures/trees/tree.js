@@ -119,6 +119,67 @@ class Tree {
       console.log('error');
     }
   }
+
+  queueSearch(root){
+    const queue = new Queue();
+    queue.enqueue(root);
+    const values = [];
+    let currentTree = queue.dequeue();
+
+    while (currentTree) {
+
+      if (root.value.left){
+        queue.enqueue(root.value.left);
+      }
+      if (root.value.right){
+        queue.enqueue(root.value.right);
+      }
+    }
+    return values;
+  }
+
+}
+
+class QueueNode {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class Queue {
+  constructor() {
+    this.first = null;
+    this.last = null;
+    this.size = 0;
+  }
+  enqueue(value) {
+    const newNode = new QueueNode(value);
+    if (this.size === 0) {
+      this.first = newNode;
+      this.last = newNode;
+    } else {
+      this.last.next = newNode;
+      this.last = newNode;
+    }
+    this.size++;
+
+    return this;
+  }
+  dequeue() {
+    if (this.size === 0) return false;
+    const dequeuedNode = this.first;
+
+    const newFirst = this.first.next;
+
+    if (!newFirst) {
+      this.last = newFirst;
+    }
+    this.first = newFirst;
+    dequeuedNode.next = null;
+    this.size--;
+    return dequeuedNode;
+  }
 }
 
 
@@ -127,6 +188,8 @@ class Tree {
 module.exports = {
   Node: Node,
   Tree: Tree,
+  QueueNode: QueueNode,
+  Queue: Queue,
 };
 
 
