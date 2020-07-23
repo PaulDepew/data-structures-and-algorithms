@@ -1,7 +1,7 @@
 # Left join  for 2 Hashtables
 Join two hash tables together utilizing all of the elements from the `left` table into the right table. 
 
-### Thanks Garhett for helping... 
+### Thanks Garhett for helping 
 
 ## Challenge
 

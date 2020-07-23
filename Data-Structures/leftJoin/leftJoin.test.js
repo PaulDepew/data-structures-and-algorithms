@@ -1,6 +1,6 @@
 'use strict';
 
-const HashTable = require('../hashTables/hashTables')
+const HashTable = require('../hashTables/hashTables.js')
 const leftJoin = require('./leftJoin.js')
 
 const left = new HashTable(1024)
