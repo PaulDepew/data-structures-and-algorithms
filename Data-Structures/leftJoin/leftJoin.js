@@ -1,7 +1,12 @@
 'use strict';
 
+const HashTable = require('../hashTables/hashTables.js')
+
+
+
 function leftJoin(leftHash, rightHash) {
   let newHash = []
+  
   for (let i = 0; i < leftHash.keysArr.length; i++) {
     
     if(rightHash.keysObj[leftHash.keysArr[i]])  {
@@ -17,5 +22,6 @@ function leftJoin(leftHash, rightHash) {
   }
   return newHash
 };
+
 
 module.exports = leftJoin;
